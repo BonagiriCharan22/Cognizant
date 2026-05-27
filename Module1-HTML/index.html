@@ -3,53 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Community Events</title>
     <style>
-    #welcomeBanner {
-        background-color: blue;
-    }
-
-    .highlight {
-        background-color: yellow;
-    }
-    section{
-        border: 1px solid black;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 15px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-</style>
+        .gallery-img{
+            border: 2px solid black;
+            width: 200px;
+            height: 140px;
+            border-radius: 10px;
+            padding: 3px;
+            object-fit: cover;
+        }
+        #welcomeBanner{
+            background-color: blue;
+            color: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 15px;
+        }
+        .highlight{
+            background-color: yellow;
+            color: black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        section{
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        table{
+            width: 100%;
+            border-spacing: 20px;
+            text-align: center;
+        }
+        td{
+            vertical-align: top;
+            width: 33%;
+        }
+        td p{
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        nav a{
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-
     <section>
         <nav>
-            <!--this is NavBar-->
+            <!-- this is NavBar -->
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
             <a href="help.html" target="_blank">Help</a>
-            </nav>
+        </nav>
     </section>
-    <div id="welcomeBanner">  
-        <h1 class="highlight">This is about Lorem</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         A modi labore eveniet facere maiores.
-         <span style="color:red; font-weight:bold;">This is offer for You</span>
-          Esse quaerat dignissimos praesentium nisi quos architecto,
-         id possimus ab alias, aut modi nemo deserunt ut?  </p></div>
+    <div id="welcomeBanner">
+        <h1 class="highlight">This is about Lorem</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            A modi labore eveniet facere maiores.
+            <span style="color:red; font-weight:bold;">
+                This is offer for You
+            </span>
+            Esse quaerat dignissimos praesentium nisi quos architecto,
+            id possimus ab alias, aut modi nemo deserunt ut?
+        </p>
+    </div>
     <section id="about">
-         <h1>About Us</h1>
-         <p>This is the about section of our website.</p>
+        <h1>About Us</h1>
+        <p>
+            This is the about section of our website.
+        </p>
     </section>
     <section id="services">
         <h1>Our Services</h1>
-        <p>We offer a variety of services to meet your needs.</p>
+        <p>
+            We offer a variety of services to meet your needs.
+        </p>
     </section>
     <section id="contact">
         <h1>Contact Us</h1>
-        <p>You can reach us at</p>
-        </section>
-
+        <p>
+            You can reach us at
+        </p>
+    </section>
+    <section id="gallery">
+        <h1>Community Event Gallery</h1>
+        <table>
+            <tr>
+                <td>
+                    <img
+                        src="https://cdn.dribbble.com/userupload/18513638/file/original-ac9bdf17c00463ddf7d174add75c36cb.png?resize=752x&vertical=center"
+                        alt="Music Event"
+                        title="Community Music Festival"
+                        class="gallery-img"
+                    >
+                    <p><b>Music Festival 2025</b></p>
+                </td>
+                <td>
+                    <img
+                        src="https://cdn.dribbble.com/userupload/18513638/file/original-ac9bdf17c00463ddf7d174add75c36cb.png?resize=752x&vertical=center"
+                        alt="Sports Event"
+                        title="Community Sports Festival"
+                        class="gallery-img"
+                    >
+                    <p><b>Sports Festival 2025</b></p>
+                </td>
+                <td>
+                    <img
+                        src="https://cdn.dribbble.com/userupload/18513638/file/original-ac9bdf17c00463ddf7d174add75c36cb.png?resize=752x&vertical=center"
+                        alt="Public Meeting"
+                        title="Community Public Meeting"
+                        class="gallery-img"
+                    >
+                    <p><b>Public Meeting Festival 2025</b></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img
+                        src="https://cdn.dribbble.com/userupload/18513638/file/original-ac9bdf17c00463ddf7d174add75c36cb.png?resize=752x&vertical=center"
+                        alt="Casual Get Together"
+                        title="Community Casual Meet"
+                        class="gallery-img"
+                    >
+                    <p><b>Casual Get Together</b></p>
+                </td>
+                <td>
+                    <img
+                        src="https://cdn.dribbble.com/userupload/18513638/file/original-ac9bdf17c00463ddf7d174add75c36cb.png?resize=752x&vertical=center"
+                        alt="Annual Meeting"
+                        title="Community Annual Meeting"
+                        class="gallery-img"
+                    >
+                    <p><b>Annual Meeting</b></p>
+                </td>
+                <td>
+                    <img
+                        src="https://cdn.dribbble.com/userupload/18513638/file/original-ac9bdf17c00463ddf7d174add75c36cb.png?resize=752x&vertical=center"
+                        alt="Art Exhibition"
+                        title="Community Art Exhibition"
+                        class="gallery-img"
+                    >
+                    <p><b>Art Exhibition</b></p>
+                </td>
+            </tr>
+        </table>
+    </section>
 </body>
 </html>
