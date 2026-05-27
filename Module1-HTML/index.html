@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Events</title>
     <style>
+        #registration form{
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
         .gallery-img{
             border: 2px solid black;
             width: 200px;
@@ -156,5 +162,77 @@
             </tr>
         </table>
     </section>
+    <section id="registration">
+
+    <h1>Event Registration Form</h1>
+
+    <form onsubmit="showMessage(event)">
+
+        <label for="name">Full Name:</label><br>
+        <input 
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+            autofocus
+        >
+        <br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+        <br><br>
+
+        <label for="date">Event Date:</label><br>
+        <input
+            type="date"
+            id="date"
+            name="date"
+            required
+        >
+        <br><br>
+
+        <label for="event">Select Event Type:</label><br>
+
+        <select id="event" name="event" required>
+
+            <option value="">-- Choose Event --</option>
+            <option value="music">Music Festival</option>
+            <option value="sports">Sports Festival</option>
+            <option value="art">Art Exhibition</option>
+            <option value="meeting">Public Meeting</option>
+
+        </select>
+
+        <br><br>
+
+        <label for="message">Message:</label><br>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            cols="40"
+            placeholder="Enter your message here..."
+            required
+        ></textarea>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+        <br><br>
+
+        <output id="confirmation"></output>
+
+    </form>
+
+</section>
 </body>
 </html>
