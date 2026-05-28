@@ -57,6 +57,39 @@
             text-decoration: none;
             font-weight: bold;
         }
+        #feedback form{
+    width: 50%;
+    margin: auto;
+}
+
+#feedback input,
+#feedback select,
+#feedback textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#feedback button{
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#feedback button:hover{
+    background-color: darkgreen;
+}
+
+#phoneMessage,
+#eventFee,
+#submitMessage{
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -234,5 +267,167 @@
     </form>
 
 </section>
+<section id="feedback">
+
+    <h1>Event Feedback Form</h1>
+
+    <form>
+
+        <!-- Phone Number -->
+
+        <label for="phone">Phone Number:</label><br>
+
+        <input
+            type="text"
+            id="phone"
+            placeholder="Enter 10 digit phone number"
+            onblur="validatePhone()"
+        >
+
+        <p id="phoneMessage"></p>
+
+        <br>
+
+        <!-- Event Selection -->
+
+        <label for="eventType">Choose Event:</label><br>
+
+        <select id="eventType" onchange="showFee()">
+
+            <option value="">-- Select Event --</option>
+            <option value="500">Music Festival</option>
+            <option value="300">Sports Festival</option>
+            <option value="400">Art Exhibition</option>
+            <option value="200">Public Meeting</option>
+
+        </select>
+
+        <p id="eventFee"></p>
+
+        <br>
+
+        <!-- Feedback Textarea -->
+
+        <label for="feedbackText">Feedback:</label><br>
+
+        <textarea
+            id="feedbackText"
+            rows="5"
+            cols="40"
+            placeholder="Write your feedback..."
+            onkeyup="countCharacters()"
+        ></textarea>
+
+        <p>
+            Characters Typed:
+            <span id="charCount">0</span>
+        </p>
+
+        <br>
+
+        <!-- Submit Button -->
+
+        <button type="button" onclick="submitFeedback()">
+            Submit Feedback
+        </button>
+
+        <p id="submitMessage"></p>
+
+    </form>
+
+    <br><br>
+
+    <!-- Double Click Image -->
+
+    <h2>Double Click the Image</h2>
+
+    <img
+        id="eventImage"
+        src="https://cdn.dribbble.com/userupload/18513638/file/original-ac9bdf17c00463ddf7d174add75c36cb.png?resize=752x&vertical=center"
+        alt="Event Image"
+        ondblclick="enlargeImage()"
+        class="gallery-img"
+    >
+
+</section>
+<script>
+
+    function validatePhone(){
+
+        let phone =
+        document.getElementById("phone").value;
+
+        let message =
+        document.getElementById("phoneMessage");
+
+        if(phone.length != 10 || isNaN(phone)){
+
+            message.innerHTML =
+            "Invalid phone number";
+
+            message.style.color = "red";
+
+        }
+
+        else{
+
+            message.innerHTML =
+            "Valid phone number";
+
+            message.style.color = "green";
+
+        }
+
+    }
+
+    function showFee(){
+
+        let fee =
+        document.getElementById("eventType").value;
+
+        document.getElementById("eventFee").innerHTML =
+        "Event Fee: ₹" + fee;
+
+    }
+
+    function submitFeedback(){
+
+        document.getElementById("submitMessage").innerHTML =
+        "Feedback submitted successfully!";
+
+    }
+
+    function enlargeImage(){
+
+        let image =
+        document.getElementById("eventImage");
+
+        image.style.width = "400px";
+        image.style.height = "250px";
+
+    }
+
+    function countCharacters(){
+
+        let text =
+        document.getElementById("feedbackText").value;
+
+        document.getElementById("charCount").innerHTML =
+        text.length;
+
+    }
+
+
+
+    function showMessage(event){
+
+        event.preventDefault();
+
+        document.getElementById("confirmation").innerHTML =
+        "Registration submitted successfully!";
+
+    }
+
+</script>
 </body>
 </html>
