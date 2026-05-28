@@ -61,6 +61,16 @@
     width: 50%;
     margin: auto;
 }
+video{
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#videoMessage{
+    color: green;
+    font-weight: bold;
+}
 
 #feedback input,
 #feedback select,
@@ -350,6 +360,30 @@
     >
 
 </section>
+<section id="videoInvite">
+
+    <h1>Event Promo Video</h1>
+
+    <video
+        width="500"
+        controls
+        oncanplay="document.getElementById('videoMessage').innerHTML='Video ready to play'"
+    >
+
+        <source
+            src="movie.mp4"
+            type="video/mp4"
+        >
+
+        Your browser does not support video.
+
+    </video>
+
+    <br><br>
+
+    <output id="videoMessage"></output>
+
+</section>
 <script>
 
     function validatePhone(){
@@ -427,6 +461,11 @@
         "Registration submitted successfully!";
 
     }
+    window.onbeforeunload = function(){
+
+        return "Your form is not completed. Are you sure you want to leave?";
+
+    };
 
 </script>
 </body>
