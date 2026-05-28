@@ -1,0 +1,19 @@
+/* Header styles */
+h1 {
+    text-align: center;
+    font-family: Arial;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 20px;
+    color: darkblue;
+}
+
+/* Button styles */
+button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+}
