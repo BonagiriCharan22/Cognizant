@@ -1,68 +1,207 @@
 /* =========================
    Local Community Event Portal Styles
    ========================= */
-/* Header styles */
-h1 {
-    color: darkred;
-    text-align: center;
-    font-family: Arial;
-}
 
-/* Paragraph styles */
-p {
-    font-size: 20px;
-    color: darkblue;
-}
+/* Universal Selector */
 
-/* Button styles */
-button {
-    background-color: green;
-    color: white;
-    padding: 10px;
-    border: none;
-}
-/* Style for main CTA button */
-.cta-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-}
-/* Universal selector */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body Styles */
 
-/* Element selector for h2 */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5 url("https://via.placeholder.com/1200x800")
+    no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header Styles */
+
 h2 {
-    color: darkblue;
+    background: linear-gradient(to right, #0066cc, #00ccff);
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* ID Selector */
+
+#mainHeader {
+    text-align: center;
+    color: navy;
+}
+
+/* Event Card */
+
+.eventCard {
+    border: 2px solid gray;
+    padding: 20px;
     margin: 20px;
 }
 
+/* Grouping Selector */
 
-/* ID selector for main banner */
-#mainHeader {
-    background-color: navy;
+h3,
+p {
+    color: #333333;
+}
+
+/* Highlight Class */
+
+.highlight {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+/* Typography */
+
+.description {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: justify;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+/* Navigation */
+
+nav ul {
+    list-style-type: none;
+    list-style-position: inside;
+    display: flex;
+    gap: 20px;
+    background-color: rgba(0,0,0,0.7);
+    padding: 15px;
+}
+
+nav ul li {
+    margin: 5px;
+    padding: 5px;
+}
+
+nav a:link {
     color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+nav a:active {
+    color: red;
+}
+
+nav a:visited {
+    color: lightgray;
+}
+
+/* CTA Button */
+
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Gallery Images */
+
+.galleryImage {
+    border: 3px solid black;
+    width: 150px;
+    height: 100px;
+}
+
+/* Table Styling */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
     text-align: center;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+/* Form Styling */
+
+form {
     padding: 20px;
 }
 
-
-/* Class selector for event cards */
-.eventCard {
-    background-color: lightgray;
-    margin: 20px;
-    padding: 15px;
-    border-radius: 10px;
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
 }
 
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid blue;
+}
 
-/* Grouping selector */
-h3, p {
-    font-family: Arial;
-    color: darkgreen;
+/* Visibility Examples */
+
+.hiddenElement {
+    visibility: hidden;
+}
+
+.noneElement {
+    display: none;
+}
+
+/* Multi Column Layout */
+
+.newsColumns {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    padding: 20px;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+
+    body {
+        font-size: 90%;
+    }
+}
+
+/* Flexible Layout */
+
+section {
+    width: 90%;
+    margin: 2vh auto;
+}
+
+video {
+    width: 60vw;
 }
