@@ -384,6 +384,47 @@ video{
     <output id="videoMessage"></output>
 
 </section>
+<section id="preferences">
+
+    <h1>User Preferences</h1>
+
+    <label for="preferredEvent">
+        Select Preferred Event:
+    </label>
+
+    <br><br>
+
+    <select id="preferredEvent">
+
+        <option value="">
+            Choose Event
+        </option>
+
+        <option value="Music Festival">
+            Music Festival
+        </option>
+
+        <option value="Sports Festival">
+            Sports Festival
+        </option>
+
+        <option value="Art Exhibition">
+            Art Exhibition
+        </option>
+
+    </select>
+
+    <br><br>
+
+    <button onclick="savePreference()">
+        Save Preference
+    </button>
+
+    <button onclick="clearPreference()">
+        Clear Preferences
+    </button>
+
+</section>
 <script>
 
     function validatePhone(){
@@ -466,6 +507,56 @@ video{
         return "Your form is not completed. Are you sure you want to leave?";
 
     };
+
+window.onload = function(){
+
+    let savedEvent =
+    localStorage.getItem("eventType");
+
+    if(savedEvent){
+
+        document.getElementById(
+            "preferredEvent"
+        ).value = savedEvent;
+
+    }
+
+};
+
+function savePreference(){
+
+    let eventType =
+    document.getElementById(
+        "preferredEvent"
+    ).value;
+
+    localStorage.setItem(
+        "eventType",
+        eventType
+    );
+
+    sessionStorage.setItem(
+        "currentEvent",
+        eventType
+    );
+
+    alert("Preference Saved");
+
+}
+
+function clearPreference(){
+
+    localStorage.clear();
+
+    sessionStorage.clear();
+
+    document.getElementById(
+        "preferredEvent"
+    ).value = "";
+
+    alert("Preferences Cleared");
+
+}
 
 </script>
 </body>
