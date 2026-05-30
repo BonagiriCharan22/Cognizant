@@ -90,3 +90,21 @@ left join feedback f
 on e.event_id=f.event_id
 where f.feedback_id is null
 group by e.event_id,e.title;
+#Daily New User Count
+select registration_date,count(user_id) as user_count
+from users where registration_date>=curdate()-interval 7 day group by registration_date;
+#Event with Maximum Sessions
+select e.event_id,e.title,count(s.session_id) as session_count
+from events e join sessions s on e.event_id=s.event_id group by e.event_id,e.title having count(s.session_id)=(select max(session_count) 
+from (select count(session_id) as session_count from sessions group by event_id) t);
+#Average Rating per City
+select e.city,avg(f.rating) as avg_rating
+from events e join feedback f on e.event_id=f.event_id group by e.city;
+#Most Registered Events
+select e.event_id,e.title,count(r.registration_id) as registration_count
+from events e join registrations r on e.event_id=r.event_id group by e.event_id,e.title
+order by registration_count desc limit 3;
+#Event Session Time Conflict
+select s1.event_id,s1.title,s2.title from sessions s1 join sessions s2
+on s1.event_id=s2.event_id and s1.session_id<s2.session_id
+and s1.start_time<s2.end_time and s1.end_time>s2.start_time;
