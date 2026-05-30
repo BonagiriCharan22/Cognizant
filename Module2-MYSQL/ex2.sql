@@ -51,3 +51,42 @@ HAVING COUNT(f.feedback_id) >= 10
 	left join resources r
 	on r.event_id=e.event_id
 	group by e.event_id,e.title;
+#Low Feedback Alerts
+select u.user_id,
+       u.full_name,
+       f.comments,
+       e.title
+from users u
+join feedback f
+on u.user_id=f.user_id
+join events e
+on e.event_id=f.event_id
+where f.rating<3;
+#Sessions per Upcoming Event
+select e.event_id,
+       e.title,
+       count(s.session_id) as session_count
+from events e
+left join sessions s
+on e.event_id=s.event_id
+where e.status='upcoming'
+group by e.event_id,e.title;
+#Organizer Event Summary
+select u.user_id,
+       u.full_name,
+       e.status,
+       count(e.event_id) as event_count
+from users u
+join events e
+on u.user_id=e.organizer_id
+group by u.user_id,u.full_name,e.status;
+#Feedback Gap
+select e.event_id,
+       e.title
+from events e
+join registrations r
+on e.event_id=r.event_id
+left join feedback f
+on e.event_id=f.event_id
+where f.feedback_id is null
+group by e.event_id,e.title;
