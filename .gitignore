@@ -1,3 +1,15 @@
-.node_modules
-.package-lock.json
-.package.json
+# Node modules
+node_modules/
+
+# npm package lock
+package-lock.json
+
+# Optional npm cache
+npm-debug.log*
+
+# MacOS files
+.DS_Store
+
+# Editor directories
+.vscode/
+ package.json
